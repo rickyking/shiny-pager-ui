@@ -164,8 +164,8 @@ pagerui_render = function(target, page_current, pages_total) {
     .html('...');
 
   // determine what range (hi/med/low) the current page is in
-  var show_lo_dots = !_.contains(_.range(1,5), page_current);
-  var show_hi_dots = !_.contains(_.range(pages_total-3, pages_total+1), page_current);
+  var show_lo_dots = !_.contains(_.range(1,4), page_current);
+  var show_hi_dots = !_.contains(_.range(pages_total-2, pages_total+1), page_current);
 
   // create an array of all page number buttons to slice for button sets
   var $btn_nums = [];
