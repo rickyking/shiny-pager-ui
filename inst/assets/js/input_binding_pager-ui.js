@@ -223,7 +223,7 @@ pagerui_render = function(target, page_current, pages_total) {
       // [1][2][3] ... [N]
       $btn_set = $btn_set
         .concat(_.map(
-          _.union(_.range(1, 4), [page_current + 3])
+          _.union(_.range(1, 6), [page_current + 3])
             .sort(NumericAscending),  // [1, current page + 1]
           GetPageNumButton
         ))
