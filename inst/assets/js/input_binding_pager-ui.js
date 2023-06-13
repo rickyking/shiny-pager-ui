@@ -200,14 +200,16 @@ pagerui_render = function(target, page_current, pages_total) {
     var $btn_set = [];
     if ( show_lo_dots &&  show_hi_dots) {
       // mid-range button set
-      // [1] ... [p-1][p][p+1] ... [N]
+      // [1] ... [p-1][p][p+1] ... [N] -> old
+      // [1] ... [p-3][p-2][p-1][p][p+1][p+2][p+3] ... [N] -> new
+      
       $btn_set = $btn_set
         .concat([
           $btn_nums[0],
           $btn_dots.clone()
         ])
         .concat(_.map(
-          _.range(page_current-1, page_current+2),  // [-1,+1] current page
+          _.range(page_current-3, page_current+4),  // [-1,+1] current page
           GetPageNumButton
         ))
         .concat([
